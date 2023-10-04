@@ -23,14 +23,15 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  // return <h1>Hello Nithin Chandran</h1>
+
   useEffect(() => {
     client
-      .get("/api/user")
+      .get("/api/user/")
       .then(function (res) {
         setCurrentUser(true);
       })
       .catch(function (error) {
-        console.error("Cant connect");
         console.error(error);
         setCurrentUser(false);
       });
